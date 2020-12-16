@@ -1,6 +1,11 @@
 #!/bin/bash
 
-HOSTNAME=`hostname --fqdn`
+if [[ -z "${HOSTNAME}" ]]; then
+  HOSTNAME=`hostname --fqdn`
+else
+  HOSTNAME="${HOSTNAME}"
+fi
+
 
 # Returns true once @hostmaster hosting_queued module is enabled.
 # Thanks to http://askubuntu.com/questions/697798/shell-script-how-to-run-script-after-mysql-is-ready
