@@ -20,7 +20,6 @@ RUN apt-get update -qq && apt-get install -y -qq\
   php7.3-mysql \
   php-pear \
   php7.3-curl \
-  postfix \
   sudo \
   rsync \
   git-core \
