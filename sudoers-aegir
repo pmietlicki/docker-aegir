@@ -1,2 +1,2 @@
 Defaults:aegir  !requiretty
-aegir ALL=(ALL) NOPASSWD:ALL
+aegir ALL=NOPASSWD: /usr/sbin/apache2ctl
