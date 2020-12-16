@@ -42,8 +42,15 @@ RUN ln -s /etc/apache2/conf-available/aegir.conf /etc/apache2/conf-enabled/aegir
 COPY sudoers-aegir /etc/sudoers.d/aegir
 RUN chmod 0440 /etc/sudoers.d/aegir
 
-RUN wget https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer -O - -q | php -- --quiet
-RUN cp composer.phar /usr/local/bin/composer
+
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php && \
+    mv composer.phar /usr/local/bin/composer && \
+  composer global require drush/drush && \
+  composer global require cweagans/composer-patches &&
+
+# Et on fini par l'install de VIM car on en aura forcement besoin 
+RUN apt-get install -y vim 
 
 ENV DRUSH_VERSION=8.3.0
 RUN wget https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar -O - -q > /usr/local/bin/drush
