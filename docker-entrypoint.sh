@@ -6,6 +6,9 @@ else
   HOSTNAME="${AEGIR_HOSTNAME}"
 fi
 
+echo "127.0.0.1   $HOSTNAME" >> /etc/hosts 2>&1
+
+
 echo 'ÆGIR | Hello! '
 echo 'ÆGIR | When the database is ready, we will install Aegir with the following options:'
 echo "ÆGIR | -------------------------"
