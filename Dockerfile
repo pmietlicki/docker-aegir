@@ -18,6 +18,8 @@ RUN apt-get update -qq && apt-get install -y -qq\
   php7.3-common \
   php7.3-gd \
   php7.3-mysql \
+  php-dom \
+  php-xml \
   php-pear \
   php7.3-curl \
   sudo \
