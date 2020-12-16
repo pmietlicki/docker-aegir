@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [[ -z "${HOSTNAME}" ]]; then
+if [[ -z "${AEGIR_HOSTNAME}" ]]; then
   HOSTNAME=`hostname --fqdn`
 else
-  HOSTNAME="${HOSTNAME}"
+  HOSTNAME="${AEGIR_HOSTNAME}"
 fi
 
 

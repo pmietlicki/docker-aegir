@@ -1,6 +1,10 @@
 #!/bin/bash
 
-HOSTNAME=`hostname --fqdn`
+if [[ -z "${AEGIR_HOSTNAME}" ]]; then
+  HOSTNAME=`hostname --fqdn`
+else
+  HOSTNAME="${AEGIR_HOSTNAME}"
+fi
 
 echo 'ÆGIR | Hello! '
 echo 'ÆGIR | When the database is ready, we will install Aegir with the following options:'

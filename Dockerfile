@@ -103,6 +103,9 @@ WORKDIR /var/aegir
 # The Hostname of the database server to use
 ENV AEGIR_DATABASE_SERVER database
 
+# The Hostname of aegir
+ENV AEGIR_HOSTNAME devaegir
+
 # For dev images (7.x-3.x branch)
 # ENV AEGIR_MAKEFILE http://cgit.drupalcode.org/provision/plain/aegir-latest.make
 
