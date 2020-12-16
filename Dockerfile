@@ -47,7 +47,7 @@ RUN chmod 0440 /etc/sudoers.d/aegir
 RUN curl -sS https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer && \
   composer global require drush/drush && \
-  composer global require cweagans/composer-patches &&
+  composer global require cweagans/composer-patches
 
 # Et on fini par l'install de VIM car on en aura forcement besoin 
 RUN apt-get install -y vim 
