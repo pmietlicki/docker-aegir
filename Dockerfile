@@ -24,6 +24,7 @@ RUN apt-get update -qq && apt-get install -y -qq\
   php7.3-curl \
   sudo \
   rsync \
+  sendmail \
   git-core \
   unzip \
   wget \
