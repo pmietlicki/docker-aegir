@@ -35,6 +35,7 @@ drush status
 echo "ÆGIR | -------------------------"
 
 
+chown -R aegir:aegir /var/aegir
 # Use drush help to determnine if Provision is installed anywhere on the system.
 drush help provision-save > /dev/null 2>&1
 if [ ${PIPESTATUS[0]} == 0 ]; then
