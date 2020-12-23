@@ -36,7 +36,7 @@ echo "ÆGIR | -------------------------"
 
 
 sudo chown -R aegir:www-data /var/aegir
-sudo chmod -R ug+w /var/aegir/*
+sudo chmod -R ug+w /var/aegir/
 #Check SSH permissions
 sudo chmod 755 /var/aegir
 sudo chmod -R g-w /var/aegir/.ssh
