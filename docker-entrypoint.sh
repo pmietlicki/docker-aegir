@@ -36,7 +36,12 @@ echo "ÆGIR | -------------------------"
 
 
 sudo chown -R aegir:www-data /var/aegir
-sudo chmod -R ug+w /var/aegir 
+sudo chmod -R ug+w /var/aegir/*
+#Check SSH permissions
+sudo chmod -R g-w /var/aegir/.ssh
+sudo chmod 600 /var/aegir/.ssh/id_rsa
+sudo chmod 644 /var/aegir/.ssh/id_rsa.pub
+sudo chmod 644 /var/aegir/.ssh/known_hosts 
 # Use drush help to determnine if Provision is installed anywhere on the system.
 drush help provision-save > /dev/null 2>&1
 if [ ${PIPESTATUS[0]} == 0 ]; then

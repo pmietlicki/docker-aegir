@@ -83,11 +83,6 @@ RUN echo 'Hello, Aegir.' > /var/log/aegir/system.log
 ENV REGISTRY_REBUILD_VERSION 7.x-2.5
 RUN drush dl --destination=/usr/share/drush/commands registry_rebuild-$REGISTRY_REBUILD_VERSION -y
 
-#Check SSH permissions
-RUN chmod 600 /var/aegir/.ssh/id_rsa
-RUN chmod 644 /var/aegir/.ssh/id_rsa.pub
-RUN chmod 644 /var/aegir/.ssh/known_hosts
-
 USER aegir
 
 RUN mkdir /var/aegir/config
