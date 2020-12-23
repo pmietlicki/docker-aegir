@@ -41,7 +41,8 @@ RUN apt-get update -qq && apt-get install -y -qq\
   wget \
   curl \
   mysql-client \
-  cron
+  cron \
+  openssh-server
 
 ENV AEGIR_UID 1000
 
