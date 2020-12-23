@@ -96,7 +96,7 @@ else
   echo "ÆGIR | Running: drush hostmaster-install"
 
   set -ex
-  drush hostmaster-install -y --strict=0 \
+  drush hostmaster-install -y --strict=0 $HOSTNAME \
     --aegir_db_host=$AEGIR_DATABASE_SERVER \
     --aegir_db_pass=$MYSQL_ROOT_PASSWORD \
     --aegir_db_port=3306 \
