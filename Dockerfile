@@ -121,4 +121,3 @@ VOLUME /var/aegir
 ENV PATH="/var/aegir/.drush:${PATH}"
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["drush", "@hostmaster", "hosting-queued"]
-User root
