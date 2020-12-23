@@ -1,5 +1,14 @@
 FROM ubuntu:20.04
 
+# You may change this environment at run time. User UID 1 is created with this email address.
+ENV AEGIR_CLIENT_EMAIL aegir@aegir.local.computer
+ENV AEGIR_CLIENT_NAME admin
+ENV AEGIR_PROFILE hostmaster
+ENV AEGIR_VERSION 7.x-3.192
+ENV PROVISION_VERSION 7.x-3.x
+ENV AEGIR_WORKING_COPY 0
+ENV AEGIR_HTTP_SERVICE_TYPE apache
+
 RUN apt-get update -qq\
  && apt-get install -y apt-transport-https ca-certificates \
  && apt-get install -y language-pack-fr-base software-properties-common apt-utils
@@ -88,15 +97,6 @@ USER aegir
 
 RUN mkdir /var/aegir/config
 RUN mkdir /var/aegir/.drush
-
-# You may change this environment at run time. User UID 1 is created with this email address.
-ENV AEGIR_CLIENT_EMAIL aegir@aegir.local.computer
-ENV AEGIR_CLIENT_NAME admin
-ENV AEGIR_PROFILE hostmaster
-ENV AEGIR_VERSION 7.x-3.192
-ENV PROVISION_VERSION 7.x-3.x
-ENV AEGIR_WORKING_COPY 0
-ENV AEGIR_HTTP_SERVICE_TYPE apache
 
 # Must be fixed across versions so we can upgrade containers.
 ENV AEGIR_HOSTMASTER_ROOT /var/aegir/hostmaster
