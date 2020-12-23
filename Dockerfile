@@ -118,6 +118,7 @@ ENV AEGIR_MAKEFILE http://cgit.drupalcode.org/provision/plain/aegir-release.make
 VOLUME /var/aegir
 
 # docker-entrypoint.sh waits for mysql and runs hostmaster install
+ENV PATH="/var/aegir/.drush:${PATH}"
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["drush", "@hostmaster", "hosting-queued"]
 User root
