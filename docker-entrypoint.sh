@@ -49,6 +49,7 @@ if [ ${PIPESTATUS[0]} == 0 ]; then
     echo "ÆGIR | Provision Commands found."
 else
     echo "ÆGIR | Provision Commands not found! Installing..."
+    PROVISION_VERSION=${PROVISION_VERSION//-dev/}
     drush dl provision-$PROVISION_VERSION --destination=/var/aegir/.drush/commands -y
 fi
 
