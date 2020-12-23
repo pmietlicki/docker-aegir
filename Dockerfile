@@ -21,6 +21,7 @@ RUN apt-get update -qq && apt-get install -y -qq\
   php7.3-xml \
   php7.3-mbstring \
   php7.3-redis \
+  php7.3-ldap \
   php-pear \
   php7.3-curl \
   sudo \
