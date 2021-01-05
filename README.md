@@ -274,26 +274,26 @@ Finally, instead of Supervisor, we run `drush @hostmaster hosting-queued`, so th
 
 The parameters for a fully functional image under Rancher are :
 
-####Environment variables
+#### Environment variables
 - Set AEGIR_DATABASE_SERVER to the hostname (mariadb.dev for example) of your database 
 - Set AEGIR_HOSTNAME to the hostname for your aegir server (devaegir for example)
 - Set MYSQL_ROOT_PASSWORD to the root password of your MariaDB/MySQL DMBS
 - Optionaly, set http_proxy, https_proxy and no_proxy variables
 
-####Health check
+#### Health check
 - Optionaly, set the liveness check part to "command run inside the containers exits with status 0" with :
 /usr/bin/env php /usr/local/bin/drush @hostmaster hosting-dispatch
 Checking after 300 seconds, interval 30 seconds, timeout 30 seconds, unhealthy after 10 attempts
 
-####Volumes
+#### Volumes
 - You can set NFS volumes for /var/aegir/.ssh and for /var/aegir
 
-####Networking
+#### Networking
 - Set hostname as same as the AEGIR_HOSTNAME variable
 - Add a host aliases entry (/etc/hosts) with :
 127.0.0.1 FQDN_OF_AEGIR
 
-####Security and host config
+#### Security and host config
 In privilege escalation, set "Yes : container can gain more privileges than its parent process
 Memory reservation : min 4096 
 Cpu reservation : min 2000
