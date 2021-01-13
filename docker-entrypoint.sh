@@ -35,7 +35,7 @@ drush status
 echo "ÆGIR | -------------------------"
 
 
-sudo chown -R aegir:www-data /var/aegir
+sudo chown -R aegir /var/aegir
 sudo chmod -R ug+w /var/aegir/
 #Check SSH permissions
 sudo chmod 755 /var/aegir
