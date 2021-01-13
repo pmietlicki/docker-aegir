@@ -68,7 +68,7 @@ RUN curl -sS https://getcomposer.org/installer | php && \
   composer global require cweagans/composer-patches
 
 # Et on fini par l'install de VIM car on en aura forcement besoin 
-RUN apt-get install -y vim 
+RUN apt-get update -qq && apt-get install -y vim 
 
 ENV DRUSH_VERSION=8.3.0
 RUN wget https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar -O - -q > /usr/local/bin/drush
