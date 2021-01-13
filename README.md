@@ -93,7 +93,7 @@ The install profile to run for the drupal front-end. Defaults to hostmaster.
 The aegir version to install.
 
 ## AEGIR_MAKEFILE
-*Defalt: http://cgit.drupalcode.org/provision/plain/aegir-release.make?h=$AEGIR_VERSION*
+*Default: http://cgit.drupalcode.org/provision/plain/aegir-release.make?h=$AEGIR_VERSION*
 
 The makefile to use for building the front-end drupal dashboard.  Defaults to hostmaster.
 
