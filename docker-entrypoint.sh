@@ -8,7 +8,7 @@ fi
 
 if [ "${MYSQL_STATISTICS}" = "false" ]
 then
-  sudo echo "column-statistics=0" >> /etc/mysql/conf.d/mysqldump.cnf
+  sudo bash -c 'echo "column-statistics=0" >> /etc/mysql/conf.d/mysqldump.cnf'
 fi
 
 
