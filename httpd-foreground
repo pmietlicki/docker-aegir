@@ -23,5 +23,6 @@ fi
 
 ln -sf /var/aegir/config/server_$AEGIR_SERVER_NAME/docker.conf /var/aegir/config/docker.conf
 
+sudo /etc/init.d/ssh start
 sudo /usr/sbin/apache2ctl start
 tail -f /var/log/aegir/system.log
