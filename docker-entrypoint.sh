@@ -6,6 +6,11 @@ else
   HOSTNAME="${AEGIR_HOSTNAME}"
 fi
 
+if [ "${MYSQL_STATISTICS}" = "false" ]
+then
+  sudo echo "column-statistics=0" >> /etc/mysql/conf.d/mysqldump.cnf
+fi
+
 
 echo 'ÆGIR | Hello! '
 echo 'ÆGIR | When the database is ready, we will install Aegir with the following options:'

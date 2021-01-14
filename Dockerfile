@@ -8,6 +8,7 @@ ENV AEGIR_VERSION 7.x-3.192
 ENV PROVISION_VERSION 7.x-3.190
 ENV AEGIR_WORKING_COPY 0
 ENV AEGIR_HTTP_SERVICE_TYPE apache
+ENV MYSQL_STATISTICS false
 
 RUN apt-get update -qq\
  && apt-get install -y apt-transport-https ca-certificates \
