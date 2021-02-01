@@ -2,7 +2,7 @@
 
 *Designed to run easily under Rancher, see [rancher website](https://rancher.com/)*
 
-** WORKDIR and VOLUME under /var/aegir**. You could map this volume if you want to have a persistent volume thus keeping data between updates and rollbacks.
+**WORKDIR and VOLUME under /var/aegir**. You could map this volume if you want to have a persistent volume thus keeping data between updates and rollbacks.
 
 What is Aegir?
 ==============
