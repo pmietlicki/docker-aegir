@@ -112,7 +112,7 @@ The MariaDB / MySQL database root password, **it is mandatory**.
 ## AEGIR_HOSTNAME
 *Default: devaegir*
 
-The hostname of the server. **It is very important !**. Must be pingable and resolvable inside the container. You should set an etc/hosts entry with the final FQDN of the server, for example :
+The hostname of the server. **It is very important !** Must be pingable and resolvable inside the container. You should set an etc/hosts entry with the final FQDN of the server, for example :
 **127.0.0.1 devaegir.yourdomain.com**
 
 ## PROVISION_VERSION 
