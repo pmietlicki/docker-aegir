@@ -1,8 +1,5 @@
 #!/bin/bash
 
-export APACHE_RUN_USER=$APACHE_RUN_USER
-export APACHE_RUN_GROUP=$APACHE_RUN_GROUP
-
 if [[ -z "${AEGIR_HOSTNAME}" ]]; then
   HOSTNAME=`hostname --fqdn`
 else
@@ -14,6 +11,9 @@ then
   sudo bash -c 'echo "column-statistics=0" >> /etc/mysql/conf.d/mysqldump.cnf'
 fi
 
+#Change apache vars
+sudo sed -i "s/APACHE_RUN_USER=www-data/APACHE_RUN_USER=$APACHE_RUN_USER/g" /etc/apache2/envvars
+sudo sed -i "s/APACHE_RUN_GROUP=www-data/APACHE_RUN_GROUP=$APACHE_RUN_GROUP/g" /etc/apache2/envvars
 
 echo 'ÆGIR | Hello! '
 echo 'ÆGIR | When the database is ready, we will install Aegir with the following options:'
