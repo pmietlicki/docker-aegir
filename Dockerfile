@@ -99,8 +99,6 @@ RUN drush dl --destination=/usr/share/drush/commands registry_rebuild-$REGISTRY_
 
 ENV APACHE_RUN_USER=aegir
 ENV APACHE_RUN_GROUP=aegir
-export APACHE_RUN_USER
-export APACHE_RUN_GROUP
 
 USER aegir
 
