@@ -100,6 +100,9 @@ RUN drush dl --destination=/usr/share/drush/commands registry_rebuild-$REGISTRY_
 ENV APACHE_RUN_USER=aegir
 ENV APACHE_RUN_GROUP=aegir
 
+RUN echo "export APACHE_RUN_USER=$APACHE_RUN_USER" > /etc/profile.d/apacheenv
+RUN echo "export APACHE_RUN_GROUP=$APACHE_RUN_GROUP" > /etc/profile.d/apacheenv
+
 USER aegir
 
 RUN mkdir /var/aegir/config
