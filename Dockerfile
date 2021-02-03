@@ -97,6 +97,11 @@ RUN echo 'Hello, Aegir.' > /var/log/aegir/system.log
 ENV REGISTRY_REBUILD_VERSION 7.x-2.5
 RUN drush dl --destination=/usr/share/drush/commands registry_rebuild-$REGISTRY_REBUILD_VERSION -y
 
+ENV APACHE_RUN_USER=aegir
+ENV APACHE_RUN_GROUP=aegir
+export APACHE_RUN_USER
+export APACHE_RUN_GROUP
+
 USER aegir
 
 RUN mkdir /var/aegir/config
