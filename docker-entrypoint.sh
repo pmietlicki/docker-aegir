@@ -63,6 +63,7 @@ fi
 echo "ÆGIR | -------------------------"
 echo "ÆGIR | Starting apache2 now to reduce downtime."
 sudo apache2ctl graceful
+sudo /etc/init.d/ssh start
 
 # Returns true once mysql can connect.
 # Thanks to http://askubuntu.com/questions/697798/shell-script-how-to-run-script-after-mysql-is-ready
