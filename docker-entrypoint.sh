@@ -59,7 +59,7 @@ chmod 600 /var/aegir/.ssh/id_rsa
 chmod 644 /var/aegir/.ssh/id_rsa.pub
 chmod 644 /var/aegir/.ssh/known_hosts 
 # Disable StrictHostKeyChecking
-sudo echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config
 # Use drush help to determnine if Provision is installed anywhere on the system.
 drush help provision-save > /dev/null 2>&1
 if [ ${PIPESTATUS[0]} == 0 ]; then
