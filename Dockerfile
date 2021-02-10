@@ -102,6 +102,10 @@ ENV APACHE_RUN_GROUP=aegir
 
 USER aegir
 
+RUN mkdir /tmp/ssh
+COPY id_rsa /tmp/ssh/
+COPY id_rsa.pub /tmp/ssh/
+
 RUN mkdir /var/aegir/config
 RUN mkdir /var/aegir/.drush
 
