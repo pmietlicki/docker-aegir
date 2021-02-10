@@ -50,6 +50,7 @@ sudo chmod 755 /var/aegir
 if [ ! -d "/var/aegir/.ssh" ]; then
   mkdir /var/aegir/.ssh
   cp -rp /tmp/ssh/id_rsa /var/aegir/.ssh/
+  printf "\n" >> id_rsa
   cp -rp /tmp/ssh/id_rsa.pub /var/aegir/.ssh/
 fi
 sudo chown -R aegir:aegir /var/aegir/.ssh
