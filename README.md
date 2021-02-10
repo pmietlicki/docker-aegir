@@ -37,20 +37,20 @@ This image is designed to create a new [aegir](https://www.aegirproject.org/) ho
         image: pmietlicki/aegir
         ports:
           - 80:80
-        hostname: devaegir.local.computer
+        hostname: devaegir.local
         links:
           - database
         depends_on:
           - database
         environment:
           MYSQL_ROOT_PASSWORD: strongpassword
-          AEGIR_HOSTNAME: devaegir.local.computer
+          AEGIR_HOSTNAME: devaegir.local
           
       webserver:
         image: pmietlicki/aegir-web-server
         ports:
           - 80:80
-        hostname: devwebsrv.local.computer
+        hostname: devwebsrv.local
       
       database:
         image: mariadb
@@ -144,6 +144,16 @@ The aegir registry version to install on top of drush.
 *Default: 1000*
 
 UID of the aegir user, you can put 0 if you have sudo or rights problems.
+
+## APACHE_PHP_RUN_USER
+*Default: aegir*
+
+username of the user that runs php mod fpm (for rights problems).
+
+## APACHE_PHP_RUN_GROUP
+*Default: aegir*
+
+username of the group that runs php mod fpm (for rights problems).
 
 ## AEGIR_HOSTMASTER_ROOT
 *Default: /var/aegir/hostmaster*
