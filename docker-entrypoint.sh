@@ -47,7 +47,7 @@ sudo chown -R aegir /var/aegir
 sudo chmod -R ug+w /var/aegir/
 #Check SSH permissions
 sudo chmod 755 /var/aegir
-if [ ! -d "/var/aegir/.ssh" ]; then
+if [ ! -d "/var/aegir/.ssh/id_rsa" ]; then
   mkdir /var/aegir/.ssh
   cp -rp /tmp/ssh/id_rsa /var/aegir/.ssh/
   printf "\n" >> /var/aegir/.ssh/id_rsa
