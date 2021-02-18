@@ -102,6 +102,9 @@ RUN drush dl --destination=/usr/share/drush/commands registry_rebuild-$REGISTRY_
 ENV APACHE_RUN_USER=aegir
 ENV APACHE_RUN_GROUP=aegir
 
+#Set SSH Password
+RUN echo "aegir:${AEGIR_SSH_PWD}" | chpasswd
+
 USER aegir
 
 RUN mkdir /tmp/ssh
