@@ -105,7 +105,7 @@ ENV APACHE_RUN_GROUP=aegir
 USER aegir
 
 #Set SSH Password
-RUN echo -e "aegir:${AEGIR_SSH_PWD}" | chpasswd
+RUN echo "aegir:${AEGIR_SSH_PWD}" | chpasswd
 
 RUN mkdir /tmp/ssh
 COPY id_rsa /tmp/ssh/
