@@ -35,6 +35,7 @@ RUN apt-get update -qq && apt-get install -y -qq\
   php7.3-mbstring \
   php7.3-redis \
   php7.3-ldap \
+  php7.3-zip \
   php-pear \
   php7.3-curl \
   sudo \
@@ -55,6 +56,8 @@ RUN echo "Creating user aegir with UID $AEGIR_UID and GID $AEGIR_GID"
 RUN addgroup --gid $AEGIR_UID aegir
 RUN adduser --uid $AEGIR_UID --gid $AEGIR_UID --home /var/aegir aegir
 RUN adduser aegir www-data
+#Set SSH Password
+RUN echo "aegir:${AEGIR_SSH_PWD}" | chpasswd
 RUN a2enmod rewrite
 RUN a2enmod ssl
 RUN ln -s /var/aegir/config/apache.conf /etc/apache2/conf-available/aegir.conf
@@ -103,9 +106,6 @@ ENV APACHE_RUN_USER=aegir
 ENV APACHE_RUN_GROUP=aegir
 
 USER aegir
-
-#Set SSH Password
-RUN echo "aegir:${AEGIR_SSH_PWD}" | chpasswd
 
 RUN mkdir /tmp/ssh
 COPY id_rsa /tmp/ssh/
