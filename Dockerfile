@@ -6,6 +6,8 @@ ENV AEGIR_CLIENT_NAME admin
 ENV AEGIR_PROFILE hostmaster
 ENV AEGIR_VERSION 7.x-3.192
 ENV PROVISION_VERSION 7.x-3.190
+ENV AEGIR_SSH_PWD aegir
+
 ENV AEGIR_WORKING_COPY 0
 ENV AEGIR_HTTP_SERVICE_TYPE apache
 ENV MYSQL_STATISTICS false
@@ -99,6 +101,9 @@ RUN drush dl --destination=/usr/share/drush/commands registry_rebuild-$REGISTRY_
 
 ENV APACHE_RUN_USER=aegir
 ENV APACHE_RUN_GROUP=aegir
+
+#Set SSH Password
+RUN echo "aegir:$AEGIR_SSH_PWD" | chpasswd
 
 USER aegir
 
