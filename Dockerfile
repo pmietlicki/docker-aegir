@@ -103,7 +103,7 @@ ENV APACHE_RUN_USER=aegir
 ENV APACHE_RUN_GROUP=aegir
 
 #Set SSH Password
-RUN echo "aegir:${AEGIR_SSH_PWD}" | chpasswd
+RUN echo -e "aegir:${AEGIR_SSH_PWD}" | chpasswd
 
 USER aegir
 
