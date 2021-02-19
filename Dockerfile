@@ -56,8 +56,6 @@ RUN echo "Creating user aegir with UID $AEGIR_UID and GID $AEGIR_GID"
 RUN addgroup --gid $AEGIR_UID aegir
 RUN adduser --uid $AEGIR_UID --gid $AEGIR_UID --home /var/aegir aegir
 RUN adduser aegir www-data
-#Set SSH Password
-RUN echo "aegir:${AEGIR_SSH_PWD}" | chpasswd
 RUN a2enmod rewrite
 RUN a2enmod ssl
 RUN ln -s /var/aegir/config/apache.conf /etc/apache2/conf-available/aegir.conf

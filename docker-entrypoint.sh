@@ -61,6 +61,8 @@ chmod 644 /var/aegir/.ssh/known_hosts
 # Disable StrictHostKeyChecking
 echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config
 # Use drush help to determnine if Provision is installed anywhere on the system.
+#Set SSH Password
+sudo echo "aegir:${AEGIR_SSH_PWD}" | sudo chpasswd
 drush help provision-save > /dev/null 2>&1
 if [ ${PIPESTATUS[0]} == 0 ]; then
     echo "ÆGIR | Provision Commands found."
