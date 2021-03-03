@@ -155,6 +155,10 @@ echo "ÆGIR | Clear Hostmaster caches ... "
 drush cc drush
 drush @hostmaster cc all
 
+#BugFix drush for mysql
+echo "ÆGIR | Disable drush column-statistics ... "
+sed -i 's|mysqldump --defaults-file=/dev/fd/3 %s --single-transaction --quick --no-autocommit %s|mysqldump --defaults-file=/dev/fd/3 %s --single-transaction --quick --no-autocommit --column-statistics=0 %s|g' /var/aegir/.drush/commands/provision/db/Provision/Service/db/mysql.php
+
 # Run whatever is the Docker CMD, typically drush @hostmaster hosting-queued
 echo "ÆGIR | Running Docker Command '$@' ..."
 

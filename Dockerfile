@@ -79,9 +79,6 @@ RUN wget https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/dru
 RUN chmod +x /usr/local/bin/composer
 RUN chmod +x /usr/local/bin/drush
 
-#BugFix drush for mysql
-RUN sed -i 's|mysqldump --defaults-file=/dev/fd/3 %s --single-transaction --quick --no-autocommit %s|mysqldump --defaults-file=/dev/fd/3 %s --single-transaction --quick --no-autocommit --column-statistics=0 %s|g' /var/aegir/.drush/commands/provision/db/Provision/Service/db/mysql.php
-
 # Install fix-permissions and fix-ownership scripts
 RUN wget http://cgit.drupalcode.org/hosting_tasks_extra/plain/fix_permissions/scripts/standalone-install-fix-permissions-ownership.sh
 RUN bash standalone-install-fix-permissions-ownership.sh
