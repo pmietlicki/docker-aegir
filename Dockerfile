@@ -64,7 +64,7 @@ RUN ln -s /etc/apache2/conf-available/aegir.conf /etc/apache2/conf-enabled/aegir
 COPY sudoers-aegir /etc/sudoers.d/aegir
 RUN chmod 0440 /etc/sudoers.d/aegir
 
-# Installation de NODE JS 
+# Install NODE JS 
 RUN apt-get update && apt-get install -my wget gnupg
 RUN curl -sL https://deb.nodesource.com/setup_current.x | bash -
 RUN apt-get install -y nodejs
