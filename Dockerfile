@@ -66,7 +66,7 @@ RUN chmod 0440 /etc/sudoers.d/aegir
 
 # Install NODE JS 
 RUN apt-get update && apt-get install -my wget gnupg
-RUN curl -sL https://deb.nodesource.com/setup_current.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
 RUN apt-get install -y nodejs python2
 RUN apt-get install -y build-essential
 RUN npm install -y -g gulp
