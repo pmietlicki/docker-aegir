@@ -4,8 +4,8 @@ FROM ubuntu:20.04
 ENV AEGIR_CLIENT_EMAIL aegir@aegir.local.computer
 ENV AEGIR_CLIENT_NAME admin
 ENV AEGIR_PROFILE hostmaster
-ENV AEGIR_VERSION 7.x-3.192
-ENV PROVISION_VERSION 7.x-3.19.x
+ENV AEGIR_VERSION 7.x-3.x
+ENV PROVISION_VERSION 7.x-3.x
 ENV AEGIR_SSH_PWD aegir
 
 ENV AEGIR_WORKING_COPY 0
@@ -74,7 +74,7 @@ RUN curl -sS https://getcomposer.org/installer | php && \
 # Et on fini par l'install de VIM car on en aura forcement besoin 
 RUN apt-get update -qq && apt-get install -y vim 
 
-ENV DRUSH_VERSION=8.1.16
+ENV DRUSH_VERSION=8.4.6
 RUN wget https://github.com/drush-ops/drush/releases/download/$DRUSH_VERSION/drush.phar -O - -q > /usr/local/bin/drush
 RUN chmod +x /usr/local/bin/composer
 RUN chmod +x /usr/local/bin/drush
